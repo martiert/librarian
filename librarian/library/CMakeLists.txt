@@ -1,5 +1,6 @@
 project(library)
 
+set(CMAKE_BUILD_TYPE Debug)
 set(Library_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/api)
 add_subdirectory(src)
 

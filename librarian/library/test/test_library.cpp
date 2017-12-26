@@ -15,9 +15,10 @@ public:
         : database(nullptr)
     {}
 
-    void add_to_database(library::Database & db) override
+    bool add_to_database(library::Database & db) override
     {
         database = &db;
+        return true;
     }
 
     library::Database * database;
@@ -30,7 +31,7 @@ TEST_CASE("add book uses correct database class", "[library]")
 
     StubBook book;
 
-    lib.add_book(book);
+    lib.add_book(book).get();
 
     REQUIRE(book.database == &db);
 }

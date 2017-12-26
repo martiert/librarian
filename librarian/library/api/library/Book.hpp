@@ -9,7 +9,7 @@ class Database;
 class Book
 {
 public:
-    virtual void add_to_database(Database & db) = 0;
+    virtual bool add_to_database(Database & db) = 0;
 };
 
 }
