@@ -8,10 +8,6 @@ Library::Library(Database & database)
     : database_(database)
 {}
 
-Library::~Library()
-{
-}
-
 std::future<bool> Library::add_book(Book & book)
 {
     return invoker_.execute([&book, this]() {

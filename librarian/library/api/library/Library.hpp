@@ -14,8 +14,7 @@ class Book;
 class Library
 {
 public:
-    Library(Database & database);
-    ~Library();
+    explicit Library(Database & database);
 
     std::future<bool> add_book(Book & book);
 
